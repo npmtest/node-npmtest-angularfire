@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-angularfire",     "homepage": "https://github.com/npmtest/node-npmtest-angularfire",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-angularfire.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [angularfire (v2.3.0)](https://github.com/firebase/angularfire)  [![npm package](https://img.shields.io/npm/v/npmtest-angularfire.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-angularfire) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-angularfire.svg)](https://travis-ci.org/npmtest/node-npmtest-angularfire)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-angularfire",
+    "keywords": [
+        "coverage",
+        "test",
+        "angularfire"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_angularfire.js",
+    "name": "npmtest-angularfire",
+    "nameAlias": "npmtest_angularfire",
+    "nameOriginal": "npmtest-angularfire",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-angularfire.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
